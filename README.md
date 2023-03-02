@@ -14,5 +14,8 @@ curl "https://raw.githubusercontent.com/louismeunier/latex-templates/main/ASSIGN
 # note template
 curl "https://raw.githubusercontent.com/louismeunier/latex-templates/main/NOTE%20TEMPLATE.tex" > note.tex
 ```
-
+```bash
+# crib-sheet template
+curl "https://raw.githubusercontent.com/louismeunier/latex-templates/main/CRIBSHEET.tex" > crib.tex
+```
 Or simply download them directly.
