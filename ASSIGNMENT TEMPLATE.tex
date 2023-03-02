@@ -1,0 +1,47 @@
+\documentclass[12pt]{exam}
+\usepackage{amsthm}
+\usepackage{libertine}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{multicol}
+\usepackage[shortlabels]{enumitem}
+\usepackage{siunitx}
+\usepackage{cancel}
+\usepackage{graphicx}
+% \usepackage{pgfplots}
+\usepackage{listings}
+\usepackage{tikz}
+
+% \pgfplotsset{width=10cm,compat=1.9}
+% \usepgfplotslibrary{external}
+
+% header rule
+% leave any blank to not include it
+\newcommand{\class}{CODE123} % course code/name
+\newcommand{\assignment}{Assignment \#0} % assignment name
+\newcommand{\assdate}{\today} % due date (or just date in general?)
+\newcommand{\name}{John Smith} % your name
+\newcommand{\id}{123456789} % student id
+\newcommand{\email}{john.smith@js.com} % your email
+
+\begin{document}
+\pagestyle{plain}
+\thispagestyle{empty}
+
+\noindent
+\begin{tabular*}{\textwidth}{l @{\extracolsep{\fill}} r @{\extracolsep{6pt}} l}
+\textbf{\class} & 
+\name
+\\
+\textbf{\assignment} & 
+\id
+\\
+\textbf{\assdate} & 
+\email
+\\
+\end{tabular*}\\
+\rule[2ex]{\textwidth}{2pt}
+% ---
+
+\end{document}

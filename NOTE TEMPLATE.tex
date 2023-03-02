@@ -1,0 +1,107 @@
+\documentclass[12pt]{article}
+\usepackage{amsthm}
+\usepackage{libertine}
+\usepackage[margin=0.15in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{multicol}
+\usepackage[shortlabels]{enumitem}
+\usepackage{siunitx}
+\usepackage{setspace}
+\usepackage{cancel}
+\usepackage{graphicx}
+\usepackage{pgfplots}
+\usepackage{listings}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\usepackage{thmtools}
+\usepackage{thm-restate}
+\usepackage[colorlinks=true, linkcolor=darkgray]{hyperref}
+\usepackage{cleveref}
+\usepackage[]{csquotes}
+
+% makes theorems, definitions, etc. "restatable" as shown
+% can add more with same format as you wish
+\declaretheorem[name=Definition,numberwithin=section]{definition}
+\declaretheorem[name=Lemma,numberwithin=section]{lemma}
+\declaretheorem[name=Theorem,numberwithin=section]{theorem}
+
+% makes "quoted" text actually look correct
+\MakeOuterQuote{"}
+
+% page footer
+\newpagestyle{mypage}{%
+    \footrule
+    \setfoot{\small\textcolor{gray}{§\thesubsection}}{\small\textcolor{gray}{\textit{\sectiontitle: \textbf{\subsectiontitle}}}}{\textcolor{gray}{\small p. \thepage}}
+}
+
+
+% tikz/pgfplot settings
+\pgfplotsset{width=10cm,compat=1.9}
+\usepgfplotslibrary{external}
+% \tikzexternalize[shell escape=-enable-write18]
+
+% title page settings
+\newcommand{\pageauthor}{Louis Meunier}
+\newcommand{\pagetitle}{Intro To Very Special Math}
+\newcommand{\pagesubtitle}{MATH123}
+
+% black square for qed symbol
+\renewcommand{\qedsymbol}{$\blacksquare$}
+
+\titleformat{\section}
+{\centering\normalfont\Large\bfseries}
+{\thesection}{1em}{}
+
+\begin{document}
+\setstretch{2.25}
+\noindent
+\begin{center}
+    \begin{tabularx}{\textwidth} { 
+        >{\raggedright\arraybackslash}X 
+        >{\raggedleft\arraybackslash}X}
+    \LARGE \pageauthor \\
+    \LARGE \textbf{\pagetitle} & \LARGE \textbf{\pagesubtitle}\\
+    \end{tabularx}\\
+    \rule[2ex]{0.8\textwidth}{1pt}
+\end{center}
+
+\setstretch{1.5}
+\tableofcontents
+
+% "enables" footer with section+subsection, etc. just comment it out if you don't want it
+\pagestyle{mypage}
+
+% makes sections a very dark gray + centered
+\titleformat{\section}
+{\color{darkgray}\centering\normalfont\Large\bfseries}
+{\color{darkgray}\thesection}{1em}{}
+
+% need to change margins and such here for rest of document
+% kind of messy but what can you do
+\newpage
+% modify these as you wish
+\newgeometry{margin=0.5in, top=0.4in, bottom=0.75in}
+\parskip=0.5em
+
+\section{Some section}
+\subsection{Some subsection}
+\subsubsection{Some subsubsection}
+\begin{definition}[Composite]
+  Given $f: A \rightarrow B$ and $g: B \rightarrow C$, the \textbf{composite} $g \circ f$ of $f$ and $g$ is the function $g \circ f: A \rightarrow C$, defined by the equation $(g\circ f)(a) = g(f(a))$. The rule of this composition: \[\{(a,c)\,|\,\text{For some } b \in B, f(a) = b \text{ and } g(b) = c\}\]
+\end{definition}
+
+Using the si-unit package, big numbers look pretty nice, \num{1e-10}.
+\begin{restatable}[]{lemma}{lemmaequivalence}
+  \label{lemma:equivalence}
+  Two equivalence classes are either disjoint or equal.
+\end{restatable}
+
+\section{Appendix}
+
+\lemmaequivalence*
+\begin{proof}[Proof of \Cref{lemma:equivalence}]
+  Let $E$ be the equivalence class determined by $x$ and $E'$ the equivalence class determined by $x'$. Assume $E \cap E' \neq \varnothing$, and take $y \in E \cap E'$. By definition of equivalence classes, $y \sim x$ and $y \sim x'$. 
+  
+  By the property of symmetry, $x \sim y$, and by transivity, $x \sim x'$. Thus, $x \in E'$, and it follows that since $x \in E$, $E \subset E'$. The same logic applies in the other direction, such that $E' \subset E$, and thus $E = E'$.
+\end{proof}
+\end{document}
