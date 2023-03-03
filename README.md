@@ -1,4 +1,4 @@
-# LaTeX Templates
+# $\LaTeX$ Templates
 
 The templates I use for notes and assignments in LaTeX. They contain quite a lot of comments and should thus hopefully be easy to use. 
 
