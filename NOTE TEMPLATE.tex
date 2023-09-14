@@ -1,4 +1,4 @@
-\documentclass[12pt]{article}
+\documentclass[12pt,oneside]{article}
 \usepackage{amsthm}
 \usepackage{libertine}
 \usepackage[margin=0.15in]{geometry}
@@ -15,15 +15,89 @@
 \usepackage{titlesec}
 \usepackage{thmtools}
 \usepackage{thm-restate}
+\usepackage{xcolor-solarized}
+\usepackage[side, ragged]{footmisc}
+\usepackage{marginnote}
+\usepackage{xsim}
 \usepackage[colorlinks=true, linkcolor=darkgray]{hyperref}
+\usepackage[raggedrightboxes]{ragged2e}
 \usepackage{cleveref}
 \usepackage[]{csquotes}
+% \usepackage{shortcuts}
 
-% makes theorems, definitions, etc. "restatable" as shown
 % can add more with same format as you wish
-\declaretheorem[thmbox=S,name=Definition,numberwithin=section]{definition}
-\declaretheorem[thmbox=S,name=Lemma,numberwithin=section]{lemma}
-\declaretheorem[thmbox=S,name=Theorem,numberwithin=section]{theorem}
+\renewcommand*{\qedsymbol}{\(\blacksquare\)}
+% homework answers
+% TODO: uncomment to show answers
+% optional: use "problem" and corresponding "solution" environments. solutions are hidden when solution/print = true
+\xsimsetup{
+  load-style=layouts,
+  % solution/print=true,
+  exercise/template=minimal,
+  solution/template=runin,
+}
+% TODO: subsection numbering
+\declaretheorem[
+  % thmbox=S,
+  name=Definition,
+  refname={Definition, definition}, numberwithin=subsection,
+  shaded={rulecolor=solarized-blue, rulewidth=2pt}
+]{definition}
+
+\declaretheorem[
+  % thmbox=S,
+  name=Axiom,
+  refname={Axiom, axiom},
+  numberwithin=section,
+  shaded={rulecolor=solarized-orange, rulewidth=2pt}
+]{axiom}
+
+\declaretheorem[
+  % thmbox=S,
+  name=Lemma,
+  refname={Lemma, lemma},
+  numberwithin=section,
+  shaded={rulecolor=solarized-orange, rulewidth=1pt, bgcolor={rgb}{1,1,1}}
+]{lemma}
+
+\declaretheorem[
+  % thmbox=S,
+  name=Corollary,
+  refname={Corollary, corollary},
+  numberwithin=section,
+  shaded={rulecolor=solarized-orange, rulewidth=1pt, bgcolor={rgb}{1,1,1}}
+]{corollary}
+
+\declaretheorem[
+  % thmbox=S,
+  name=Remark,
+  refname={Remark, remark},
+  numberwithin=section
+]{remark}
+
+\declaretheorem[
+  % thmbox=S,
+  name=Theorem,
+  refname={Theorem, theorem},
+  numberwithin=section,
+  shaded={rulecolor=solarized-red, rulewidth=2pt}
+]{theorem}
+
+\declaretheorem[
+  % thmbox=M,
+  name=Example,
+  refname={Example, example},
+  numberwithin=section,
+  shaded={rulecolor=solarized-cyan, rulewidth=1pt, bgcolor={rgb}{1,1,1}}
+]{example}
+
+\declaretheorem[
+  % thmbox=S,
+  name=Proposition,
+  refname={Proposition, proposition},
+  numberwithin=section,
+  shaded={rulecolor=solarized-magenta, rulewidth=1pt, bgcolor={rgb}{1,1,1}}
+]{proposition}
 
 % makes "quoted" text actually look correct
 \MakeOuterQuote{"}
@@ -34,15 +108,9 @@
     \setfoot{\small\textcolor{gray}{§\thesubsection}}{\small\textcolor{gray}{\textit{\sectiontitle: \textbf{\subsectiontitle}}}}{\textcolor{gray}{\small p. \thepage}}
 }
 
-
-% tikz/pgfplot settings
-\pgfplotsset{width=10cm,compat=1.9}
-\usepgfplotslibrary{external}
-% \tikzexternalize[shell escape=-enable-write18]
-
 % title page settings
-\newcommand{\pageauthor}{Louis Meunier}
-\newcommand{\pagetitle}{Intro To Very Special Math}
+\newcommand{\pageauthor}{Some One}
+\newcommand{\pagetitle}{Course Name}
 \newcommand{\pagesubtitle}{MATH123}
 
 % black square for qed symbol
@@ -80,28 +148,51 @@
 % kind of messy but what can you do
 \newpage
 % modify these as you wish
-\newgeometry{margin=0.5in, top=0.4in, bottom=0.75in}
-\parskip=0.5em
+\newgeometry{margin=0.25in, top=0.4in, bottom=0.5in, marginparwidth=1.4in, marginparsep=0.3in, outer=0.2in, includemp}
+\parskip=0.6em
 
 \section{Some section}
 \subsection{Some subsection}
 \subsubsection{Some subsubsection}
-\begin{definition}[Composite]
-  Given $f: A \rightarrow B$ and $g: B \rightarrow C$, the \textbf{composite} $g \circ f$ of $f$ and $g$ is the function $g \circ f: A \rightarrow C$, defined by the equation $(g\circ f)(a) = g(f(a))$. The rule of this composition: \[\{(a,c)\,|\,\text{For some } b \in B, f(a) = b \text{ and } g(b) = c\}\]
+\begin{remark}
+  Some remark; ah yes.
+\end{remark}
+
+\begin{theorem}\label{thm:1}
+  Colorful theorems are cool.
+\end{theorem}
+
+\begin{axiom}
+  Some axiom.
+\end{axiom}
+
+\begin{example}
+  % crefs are cool
+  Prove \Cref{thm:1}.
+  \begin{proof}
+    Some proof.
+  \end{proof}
+\end{example}
+
+\begin{definition}[Some definition]
+  Some definition of a thing.\footnotemark
 \end{definition}
+\footnotetext{Make a note here (a footnote, technically, but in the margin)}
+% * unfortunately, \footnote{} does not work in float environments, so you need to use the above trick
 
-Using the si-unit package, big numbers look pretty nice, \num{1e-10}.
-\begin{restatable}[]{lemma}{lemmaequivalence}
-  \label{lemma:equivalence}
-  Two equivalence classes are either disjoint or equal.
-\end{restatable}
+\begin{proposition}
+  Some proposition.
+  \begin{proof}
+    Some proof.
+  \end{proof}
+\end{proposition}
 
-\section{Appendix}
+\begin{lemma}
+  Some lemma.
+\end{lemma}
 
-\lemmaequivalence*
-\begin{proof}[Proof of \Cref{lemma:equivalence}]
-  Let $E$ be the equivalence class determined by $x$ and $E'$ the equivalence class determined by $x'$. Assume $E \cap E' \neq \varnothing$, and take $y \in E \cap E'$. By definition of equivalence classes, $y \sim x$ and $y \sim x'$. 
-  
-  By the property of symmetry, $x \sim y$, and by transivity, $x \sim x'$. Thus, $x \in E'$, and it follows that since $x \in E$, $E \subset E'$. The same logic applies in the other direction, such that $E' \subset E$, and thus $E = E'$.
-\end{proof}
+\begin{corollary}
+  Some corollary.
+\end{corollary}
+
 \end{document}
