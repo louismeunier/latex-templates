@@ -8,14 +8,15 @@ To use them locally, you can use:
 
 ```bash
 # assignment template
-curl "https://raw.githubusercontent.com/louismeunier/latex-templates/main/ASSIGNMENT%20TEMPLATE.tex" > assignment.tex
+curl "https://raw.githubusercontent.com/louismeunier/latex-templates/main/assignment-template/ASSIGNMENT%20TEMPLATE.tex" > assignment.tex && curl "https://raw.githubusercontent.com/louismeunier/latex-templates/main/assignment-template/betterqs.sty" > betterqs.sty && curl https://raw.githubusercontent.com/louismeunier/latex-templates/main/assignment-template/shortcuts.sty > shortcuts.sty
 ```
+
 ```bash
 # note template
-curl "https://raw.githubusercontent.com/louismeunier/latex-templates/main/NOTE%20TEMPLATE.tex" > note.tex
+curl "https://raw.githubusercontent.com/louismeunier/latex-templates/main/note-template/NOTE%20TEMPLATE.tex" > note.tex && curl "https://raw.githubusercontent.com/louismeunier/latex-templates/main/note-template/shortcuts.sty" > shortcuts.sty
 ```
 ```bash
 # crib-sheet template
-curl "https://raw.githubusercontent.com/louismeunier/latex-templates/main/CRIBSHEET.tex" > crib.tex
+curl "https://raw.githubusercontent.com/louismeunier/latex-templates/main/note-template/shortcuts.sty" > crib.tex
 ```
 Or simply download them directly.
