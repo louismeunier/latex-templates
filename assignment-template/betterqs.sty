@@ -1,0 +1,61 @@
+% ! Features
+% ! qs, subqs, ans environment
+% ! \qt and \subqt commands, auto label question
+% ! eg \cref{q:1} will print "question 1"
+
+\RequirePackage{amsmath,amssymb,amsthm,mathtools, mdframed, hyperref, cleveref, xparse,enumitem}
+
+
+% hyperref setup
+\hypersetup{
+    colorlinks=true,
+    linkcolor=magenta
+}
+
+
+\crefname{questionref}{question}{questions}
+% \Crefname{questionref}{Question}{Questions}
+
+\newenvironment{ans}{
+
+\begin{mdframed}
+    \begin{proof}}
+        {
+    \end{proof}
+\end{mdframed}
+}
+
+% subquestion
+\newenvironment{subqs}{
+    \begin{enumerate}[label=\textbf{\alph*)}]
+}{
+    \end{enumerate}
+}
+
+
+
+\newcommand{\qt}[1][1]{
+    % new page if not on question 1
+    \ifnum\value{enumi}>0
+        \newpage
+    \fi
+    \setcounter{enumi}{#1 - 1}
+    % display question number, and automatically label it
+    \item \label[questionref]{q:\arabic{enumi}} 
+}
+
+
+\newcommand{\subqt}[1][1]{
+    % new page if not on question 1
+    % \ifnum\value{enumii}>0
+    %     \newpage
+    % \fi
+    % \setcounter{enumii}{#1 - 1}
+    % display question number, and automatically label it
+    \item \label[questionref]{q:\arabic{enumi}.\alph{enumii}} 
+}
+
+
+% \newcommand{\subqt}{
+%     \item \label[question]{q:\arabic{enumi}\alph{enumii}}
+% }

@@ -1,0 +1,24 @@
+\newcommand{\re}[1]{\text{Re}\left(#1\right)}
+\newcommand{\im}[1]{\text{Im}\left(#1\right)}
+
+\newcommand{\quickthm}[2]{
+    \begin{#1}
+        #2
+    \end{#1}
+}
+
+\newcommand{\st}{\text{ s.t. }}
+
+\let\oldforall\forall
+\renewcommand{\forall}{\,\oldforall \, }
+
+\let\oldepsilon\epsilon
+\renewcommand{\epsilon}{\varepsilon}
+
+\newcommand{\pset}[1]{\mathcal{P}(#1)}
+
+\newcommand{\abs}[1]{\left|#1\right|}
+
+% ! does not behave nicely in displaymode....
+\DeclareMathOperator*\limsupbar{\overline{\lim}_{n\to\infty}}
+\DeclareMathOperator*\liminfbar{\underline{\lim}_{n\to\infty}}
