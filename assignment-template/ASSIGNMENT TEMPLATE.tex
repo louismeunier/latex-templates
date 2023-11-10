@@ -1,8 +1,8 @@
-\documentclass[12pt]{exam}
+\documentclass[12pt]{article}
 \usepackage{amsthm}
 \usepackage{libertine}
 \usepackage[utf8]{inputenc}
-\usepackage[margin=0.25in]{geometry}
+\usepackage[margin=0.25in, includefoot]{geometry}
 \usepackage{amsmath,amssymb}
 \usepackage{multicol}
 \usepackage[shortlabels]{enumitem}
@@ -13,14 +13,22 @@
 \usepackage{listings}
 \usepackage{tikz}
 \usepackage{csquotes}
+\usepackage[colorlinks, allcolors=gray]{hyperref}
 % custom
 \usepackage{betterqs}
 \usepackage{shortcuts}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\usepackage{lastpage}
+
+
 
 \MakeOuterQuote{"}
 % \pgfplotsset{width=10cm,compat=1.9}
 % \usepgfplotslibrary{external}
 
+\fancyfoot[C]{{\small\thepage \hspace{0.05cm} / \hspace{0.05cm}\textcolor{gray}{\pageref*{LastPage}}}}
 % header rule
 % leave any blank to not include it
 \newcommand{\class}{CODE123} % course code/name
