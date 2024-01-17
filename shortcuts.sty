@@ -1,0 +1,45 @@
+\ProvidesPackage{shortcuts}
+
+\usepackage{physics}
+% ? Various shortcuts
+
+% ! real/imaginary
+\newcommand{\re}[1]{\text{Re}\left(#1\right)}
+\newcommand{\im}[1]{\text{Im}\left(#1\right)}
+
+% ! such that
+\newcommand{\st}{\text{ s.t. }}
+
+% ! better spacing forall
+\let\oldforall\forall
+\renewcommand{\forall}{\,\oldforall \, }
+% ! never use epsilon
+\let\oldepsilon\epsilon
+\renewcommand{\epsilon}{\varepsilon}
+% ! powerset
+\newcommand{\pset}[1]{\mathcal{P}(#1)}
+
+% ! limit points
+\newcommand{\fl}{\mathscr{L}}
+
+% ! limsup/liminf pretty
+\DeclareMathOperator*\limsupbar{\overline{\lim}_{n\to\infty}}
+\DeclareMathOperator*\liminfbar{\underline{\lim}_{n\to\infty}}
+
+% ! overline/underline
+\newcommand{\obar}[1]{\overline{#1}}
+\newcommand{\ubar}[1]{\underline{#1}}
+
+% ! algebra is a nightmare
+\newcommand{\zmod}[1]{\mathbb{Z}/#1\mathbb{Z}}
+
+% ! absolute value
+\renewcommand{\abs}[1]{\left|#1\right|}
+\renewcommand{\norm}[1]{||#1||}
+
+% linear algebra
+\newcommand{\field}{\mathbb{F}}
+\newcommand{\defvectorspace}{Let $V$ be a vector space over a field $\field$}
+\DeclareMathOperator*\interior{Int}
+\DeclareMathOperator*\Span{Span}
+\DeclareMathOperator*\St{St}

@@ -34,25 +34,25 @@
 
 
 
-\newcommand{\qt}[1][1]{
+\newcommand{\qt}[2][\value{enumi}+1]{
     % new page if not on question 1
     \ifnum\value{enumi}>0
         \newpage
     \fi
     \setcounter{enumi}{#1 - 1}
     % display question number, and automatically label it
-    \item \label[questionref]{q:\arabic{enumi}} 
+    \item \label[questionref]{q:\arabic{enumi}} \textit{#2} 
 }
 
 
-\newcommand{\subqt}[1][1]{
+\newcommand{\subqt}[2][1]{
     % new page if not on question 1
     % \ifnum\value{enumii}>0
     %     \newpage
     % \fi
     % \setcounter{enumii}{#1 - 1}
     % display question number, and automatically label it
-    \item \label[questionref]{q:\arabic{enumi}.\alph{enumii}} 
+    \item \label[questionref]{q:\arabic{enumi}.\alph{enumii}} \textit{#2}
 }
 
 

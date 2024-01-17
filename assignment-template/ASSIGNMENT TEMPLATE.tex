@@ -16,7 +16,9 @@
 \usepackage[colorlinks, allcolors=gray]{hyperref}
 % custom
 \usepackage{betterqs}
-\usepackage{shortcuts}
+\usepackage{import}
+% ! change to wherever shortcuts file is located
+\import{/users/louismeunier/Documents/templates/}{shortcuts.sty}
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhf{}
@@ -58,17 +60,17 @@
 % ---
 
 \begin{enumerate}[label={\textbf{\arabic*.}}]
-    \qt \textit{Pose a question}
+    \qt{Pose a question}
     % ! pass an argument to `ans` to change the heading
     \begin{ans}[Answer]
         Then answer said question. Perhaps you wish to recall the \cref{q:1} at some point, who knows.
     \end{ans}
     \begin{enumerate}
-        \subqt Some people ask subquestions
+        \subqt{Some people ask subquestions}
         \begin{ans}
             And others answer them
         \end{ans}
-        \subqt Some other subquestions
+        \subqt{Some other subquestions}
         \begin{ans}
             May trivially follow from \cref{q:1.a}.
         \end{ans}
