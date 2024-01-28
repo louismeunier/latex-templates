@@ -1,11 +1,10 @@
 \ProvidesPackage{shortcuts}
 
-\usepackage{physics}
 % ? Various shortcuts
 
 % ! real/imaginary
 \newcommand{\re}[1]{\text{Re}\left(#1\right)}
-\newcommand{\im}[1]{\text{Im}\left(#1\right)}
+% \newcommand{\im}[1]{\text{Im}\left(#1\right)}
 
 % ! such that
 \newcommand{\st}{\text{ s.t. }}
@@ -39,7 +38,12 @@
 
 % linear algebra
 \newcommand{\field}{\mathbb{F}}
-\newcommand{\defvectorspace}{Let $V$ be a vector space over a field $\field$}
+\newcommand{\defvectorspace}[1][]{Let $V$ be a #1vector space over a field $\field$ }
 \DeclareMathOperator*\interior{Int}
 \DeclareMathOperator*\Span{Span}
 \DeclareMathOperator*\St{St}
+
+\DeclareMathOperator*\im{Im}
+
+%\DeclareMathOperator*\rank{rank}
+\DeclareMathOperator*\nullity{nullity}
