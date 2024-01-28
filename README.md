@@ -10,6 +10,10 @@ To use them locally, you can use:
 # assignment template
 curl "https://raw.githubusercontent.com/louismeunier/latex-templates/main/assignment-template/ASSIGNMENT%20TEMPLATE.tex" > assignment.tex && curl "https://raw.githubusercontent.com/louismeunier/latex-templates/main/assignment-template/betterqs.sty" > betterqs.sty && curl https://raw.githubusercontent.com/louismeunier/latex-templates/main/assignment-template/shortcuts.sty > shortcuts.sty
 ```
+```bash
+# module notes template
+curl https://raw.githubusercontent.com/louismeunier/latex-templates/main/modular-notes/main.tex >> main.tex && curl https://raw.githubusercontent.com/louismeunier/latex-templates/main/modular-notes/setup.sty >> setup.sty && mkdir parts && curl https://raw.githubusercontent.com/louismeunier/latex-templates/main/modular-notes/parts/01.tex >> parts/01.tex
+```
 
 ```bash
 # note template
