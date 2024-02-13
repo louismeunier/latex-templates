@@ -1,36 +1,44 @@
 \documentclass[12pt]{article}
-\usepackage{amsthm}
-\usepackage{libertine}
-\usepackage[utf8]{inputenc}
-\usepackage[margin=0.25in, includefoot]{geometry}
+\usepackage[margin=0.25in, includefoot, includehead]{geometry}
+% \usepackage{libertine}
+
 \usepackage{amsmath,amssymb}
+\usepackage{amsthm}
+\usepackage{physics}
+\usepackage{newpxmath}
+\usepackage{newpxtext}
+
+\usepackage{listings}
+
 \usepackage{multicol}
 \usepackage[shortlabels]{enumitem}
-\usepackage{siunitx}
+
 \usepackage{cancel}
+
 \usepackage{graphicx}
 % \usepackage{pgfplots}
-\usepackage{listings}
 \usepackage{tikz}
+
 \usepackage{csquotes}
-\usepackage[colorlinks, allcolors=gray]{hyperref}
+\usepackage[ddmmyy]{datetime}
+
+\usepackage{xcolor-solarized}
+\usepackage[hidelinks,frenchlinks=true]{hyperref}
+\usepackage{fancyhdr}
+
+\usepackage{lastpage}
+
 % custom
 \usepackage{betterqs}
 \usepackage{import}
 % ! change to wherever shortcuts file is located
 \import{/users/louismeunier/Documents/templates/}{shortcuts.sty}
-\usepackage{fancyhdr}
-\pagestyle{fancy}
-\fancyhf{}
-\usepackage{lastpage}
-
 
 
 \MakeOuterQuote{"}
 % \pgfplotsset{width=10cm,compat=1.9}
 % \usepgfplotslibrary{external}
 
-\fancyfoot[C]{{\small\thepage \hspace{0.05cm} / \hspace{0.05cm}\textcolor{gray}{\pageref*{LastPage}}}}
 % header rule
 % leave any blank to not include it
 \newcommand{\class}{CODE123} % course code/name
@@ -40,23 +48,30 @@
 \newcommand{\id}{123456789} % student id
 \newcommand{\email}{john.smith@js.com} % your email
 
-\begin{document}
-\pagestyle{plain}
-\thispagestyle{empty}
 
-\noindent
-\begin{tabular*}{\textwidth}{l @{\extracolsep{\fill}} r @{\extracolsep{6pt}} l}
-\textbf{\class} & 
-\name
-\\
-\textbf{\assignment} & 
-\id
-\\
-\textbf{\assdate} & 
-\email
-\\
-\end{tabular*}\\
-\rule[2ex]{\textwidth}{2pt}
+\begin{document}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[C]{{\scriptsize\thepage \hspace{0.05cm} / \hspace{0.05cm}\textcolor{gray}{\pageref{LastPage}}}}
+\fancyhead[L]{{\scriptsize\class - \assignment \,\, (\assdate)}}
+\fancyhead[R]{{\scriptsize \name  \,\,(\id)}}
+% \fancyfoot[L]{{\tiny \assdate\vspace{-10em}}}
+
+% \thispagestyle{empty}
+
+% \noindent
+% \begin{tabular*}{\textwidth}{l @{\extracolsep{\fill}} r @{\extracolsep{6pt}} l}
+% \textbf{\class} & 
+% \name
+% \\
+% \textbf{\assignment} & 
+% \id
+% \\
+% \textbf{\assdate} & 
+% \email
+% \\
+% \end{tabular*}\\
+% \rule[2ex]{\textwidth}{2pt}
 % ---
 
 \begin{enumerate}[label={\textbf{\arabic*.}}]
