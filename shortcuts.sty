@@ -48,6 +48,8 @@
 \DeclareMathOperator*\ker{Ker}
 
 %\DeclareMathOperator*\rank{rank}
+\DeclareMathOperator*\crank{c-rank}
+\DeclareMathOperator*\rrank{r-rank}
 \DeclareMathOperator*\nullity{nullity}
 \DeclareMathOperator*\Hom{Hom}
 \DeclareMathOperator*\Id{Id}
@@ -55,3 +57,16 @@
 % Goofy
 \renewcommand{\leq}{\leqslant}
 \renewcommand{\geq}{\geqslant}
+
+\newcommand{\floor}[1]{\lfloor #1 \rfloor}
+\DeclareMathOperator*\GL{GL}
+\DeclareMathOperator*\SO{SO}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\card}{\text{card}}
+\newcommand\encircle[2][gray]{%
+  \tikz[baseline=(X.base)] 
+    \node (X) [draw, shape=circle, inner sep=-4, #1, thick] {\strut {\small #2}};}
+
+\newcommand{\eig}{\text{Eig}}
