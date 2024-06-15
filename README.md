@@ -23,4 +23,5 @@ curl "https://raw.githubusercontent.com/louismeunier/latex-templates/main/note-t
 # crib-sheet template
 curl "https://raw.githubusercontent.com/louismeunier/latex-templates/main/note-template/shortcuts.sty" > crib.tex
 ```
+
 Or simply download them directly.
